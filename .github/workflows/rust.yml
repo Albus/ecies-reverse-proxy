@@ -17,7 +17,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/download-artifact@v3.1.0
+    - uses: actions/download-artifact@v8
     - name: Build
       run: cargo build --verbose --release
     - name: Run tests
