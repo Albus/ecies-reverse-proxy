@@ -52,7 +52,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: ecies-proxy-linux-amd64
-          path: ./ecies-proxy/target/release/
+          path: ./target/release/
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -67,8 +67,8 @@ jobs:
       - name: Build and push ecies-proxy
         uses: docker/build-push-action@v6
         with:
-          context: .  # корень репозитория, если Dockerfile там же
-          file: ./Dockerfile  # ЯВНО указываем путь к Dockerfile в корне
+          context: .                # корень репозитория, где лежит Dockerfile
+          file: ./Dockerfile        # путь к Dockerfile
           push: true
           tags: ghcr.io/${{ github.repository }}/ecies-proxy:latest
           cache-from: type=gha
