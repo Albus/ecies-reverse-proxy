@@ -231,7 +231,7 @@ sequenceDiagram
 ```mermaid
 graph TD
     subgraph "Входные данные"
-    PKG[Зашифрованный пакет {{...}}]
+    PKG["Зашифрованный пакет {{...}}"]
     end
 
     subgraph "ECIES Decryption"
