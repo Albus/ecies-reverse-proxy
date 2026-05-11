@@ -158,7 +158,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let listen_addr =
         env::var("LISTEN_ADDR").unwrap_or_else(|_| "0.0.0.0:8080".to_string());
 
-    let base64_re = Regex::new(r"(?gs)[{]{2}([A-Za-z0-9_-]{44,})[}]{2}")?;
+    let base64_re = Regex::new(r"(?s)[{]{2}([A-Za-z0-9_-]{44,})[}]{2}")?;
 
     let state = Arc::new(AppState {
         upstream,
